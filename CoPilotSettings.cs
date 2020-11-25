@@ -161,7 +161,7 @@ namespace CoPilot
         public RangeNode<int> customMinEnemys = new RangeNode<int>(1, 0, 50);
         public RangeNode<float> customHpPct = new RangeNode<float>(100, 0f, 100f);
         public RangeNode<float> customEsPct = new RangeNode<float>(0f, 0f, 100f);
-        public RangeNode<int> customCooldown = new RangeNode<int>(4000, 1000, 10000);
+        public RangeNode<int> customCooldown = new RangeNode<int>(4000, 100, 10000);
         public HotkeyNode customKey = new HotkeyNode(Keys.T);
         #endregion
 
