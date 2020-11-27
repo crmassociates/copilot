@@ -447,6 +447,29 @@ namespace CoPilot
 
             try
             {
+                if (CoPilot.instance.Settings.customTwoEnabled)
+                    ImGui.PushStyleColor(ImGuiCol.Header, green);
+                else
+                    ImGui.PushStyleColor(ImGuiCol.Header, red);
+                ImGui.PushID(15);
+                if (ImGui.TreeNodeEx("Custom Skill 2 (Use any Skill not Supported here.)", collapsingHeaderFlags))
+                {
+                    CoPilot.instance.Settings.customTwoEnabled.Value = ImGuiExtension.Checkbox("Enabled", CoPilot.instance.Settings.customTwoEnabled.Value);
+                    CoPilot.instance.Settings.customTwoKey.Value = ImGuiExtension.HotkeySelector("Key: " + CoPilot.instance.Settings.customTwoKey.Value, CoPilot.instance.Settings.customTwoKey);
+                    CoPilot.instance.Settings.customTwoCooldown.Value = ImGuiExtension.IntSlider("Cooldown", CoPilot.instance.Settings.customTwoCooldown);
+                    CoPilot.instance.Settings.customTwoMinEnemys.Value = ImGuiExtension.IntSlider("min. Enemys in Trigger Range", CoPilot.instance.Settings.customTwoMinEnemys);
+                    CoPilot.instance.Settings.customTwoTriggerRange.Value = ImGuiExtension.IntSlider("Trigger Range", CoPilot.instance.Settings.customTwoTriggerRange);
+                    CoPilot.instance.Settings.customTwoHpPct.Value = ImGuiExtension.FloatSlider("HP%", CoPilot.instance.Settings.customTwoHpPct);
+                    CoPilot.instance.Settings.customTwoEsPct.Value = ImGuiExtension.FloatSlider("ES%", CoPilot.instance.Settings.customTwoEsPct);
+                }
+            }
+            catch (Exception e)
+            {
+                CoPilot.instance.LogError(e.ToString());
+            }
+
+            try
+            {
                 if (CoPilot.instance.Settings.brandRecallEnabled)
                     ImGui.PushStyleColor(ImGuiCol.Header, green);
                 else

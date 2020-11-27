@@ -45,6 +45,7 @@ namespace CoPilot
         private DateTime lastdoedreEffigy = new DateTime();
         private DateTime lastStackSkill = new DateTime();
         private DateTime lastCustom = new DateTime();
+        private DateTime lastTwoCustom = new DateTime();
         private DateTime lastOfferings = new DateTime();
         private DateTime lastAutoGolem = new DateTime();
         private DateTime lastBrandRecall = new DateTime();
@@ -998,6 +999,8 @@ namespace CoPilot
                         }
                     }
                     #endregion
+
+
 
                     #region Custom Skill 2
                     if (Settings.customEnabled)
