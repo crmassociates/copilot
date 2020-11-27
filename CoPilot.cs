@@ -433,7 +433,7 @@ namespace CoPilot
 
 
                     // Do not Cast anything while we are untouchable or Chat is Open
-                    if (buffs.Exists(x => x.Name == "grace_period") || GameController.IngameState.IngameUi.ChatBox.Parent.Parent.Parent.GetChildAtIndex(3).IsVisible)
+                    if (buffs.Exists(x => x.Name == "grace_period") // being lazy and not looking for chatbox offset.
                         return;
 
 
