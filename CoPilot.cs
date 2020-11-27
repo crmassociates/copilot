@@ -998,6 +998,28 @@ namespace CoPilot
                         }
                     }
                     #endregion
+
+                    #region Custom Skill 2
+                    if (Settings.customEnabled)
+                    {
+                        try
+                        {
+                            if (GCD() && (DateTime.Now - lastTwoCustom).TotalMilliseconds > Settings.customTwoCooldown.Value && GetMonsterWithin(Settings.customTriggerRange) >= Settings.customTwoMinEnemys)
+                            {
+                                if ((Math.Round(player.HPPercentage, 3) * 100 <= Settings.customTwoHpPct.Value || player.MaxES > 0 && (Math.Round(player.ESPercentage, 3) * 100 < Settings.customTwoEsPct.Value)))
+                                {
+                                    KeyPress(Settings.customTwoKey);
+                                    lastTwoCustom = DateTime.Now;
+                                }
+
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            LogError(e.ToString());
+                        }
+                    }
+                    #endregion
                 }
             }
         }

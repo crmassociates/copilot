@@ -165,6 +165,16 @@ namespace CoPilot
         public HotkeyNode customKey = new HotkeyNode(Keys.T);
         #endregion
 
+        #region Custom Skill 2
+        public ToggleNode customTwoEnabled = new ToggleNode(false);
+        public RangeNode<int> customTwoTriggerRange = new RangeNode<int>(500, 100, 2000);
+        public RangeNode<int> customTwoMinEnemys = new RangeNode<int>(1, 0, 50);
+        public RangeNode<float> customTwoHpPct = new RangeNode<float>(100, 0f, 100f);
+        public RangeNode<float> customTwoEsPct = new RangeNode<float>(0f, 0f, 100f);
+        public RangeNode<int> customTwoCooldown = new RangeNode<int>(4000, 100, 10000);
+        public HotkeyNode customTwoKey = new HotkeyNode(Keys.T);
+        #endregion
+
         #region Brand Recall
         public ToggleNode brandRecallEnabled = new ToggleNode(false);
         public RangeNode<int> brandRecallTriggerRange = new RangeNode<int>(500, 100, 2000);
